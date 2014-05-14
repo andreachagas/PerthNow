@@ -106,7 +106,7 @@ public class EventListFragment extends ListFragment implements
 			tv = (TextView) convertView.findViewById(R.id.event);
 			tv.setText(event.getEvent());
 			tv = (TextView) convertView.findViewById(R.id.date);
-			tv.setText(event.getDate());
+			tv.setText(event.getSDate());
 			tv = (TextView) convertView.findViewById(R.id.time);
 			tv.setText(event.getStartTime());
 

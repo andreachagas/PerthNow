@@ -22,8 +22,11 @@ public class EventTestUtils {
 	private static final String[] ENDTIMES = {
 		"12:00", "10:30", "23:00", "00:00",};
 	
-	private static final String[] DATES = {
-		"20/04", "21/04", "22/04", "23/04",};
+	private static final String[] SDATES = {
+		"20/04/2015", "21/04/2015", "22/04/2015", "23/04/2015",};
+	
+	private static final String[] EDATES = {
+		"20/04/2015", "22/04/2015", "23/04/2015", "23/04/2015",};
 	
 	private static final String[] SUBURB = {
 		"Perth", "Mount Lawley", "Cottesloe", "Scarborough",};
@@ -72,19 +75,16 @@ public class EventTestUtils {
 		final JSONObject json = new JSONObject();
 		try{
 			long idValue = ++idCount;
+			
 			json.put(Event.JSON_KEY_ID, idValue);
-			int randomValue = mRandom.nextInt(STARTTIMES.length);
-			json.put(Event.JSON_KEY_START_TIMES, STARTTIMES[randomValue]);
-			randomValue = mRandom.nextInt(ENDTIMES.length);
-			json.put(Event.JSON_KEY_END_TIMES, ENDTIMES[randomValue]);
-			randomValue = mRandom.nextInt(DATES.length);
-			json.put(Event.JSON_KEY_DATES, DATES[randomValue]);
-			randomValue = mRandom.nextInt(SUBURB.length);
-			json.put(Event.JSON_KEY_SUBURB, SUBURB[randomValue]);
-			randomValue = mRandom.nextInt(PRICE.length);
-			json.put(Event.JSON_KEY_PRICE, PRICE[randomValue]);
-			randomValue = mRandom.nextInt(EVENT.length);
-			json.put(Event.JSON_KEY_EVENT, EVENT[randomValue]);
+			json.put(Event.JSON_KEY_START_TIMES, "14:30");
+			json.put(Event.JSON_KEY_END_TIMES, "15:30");
+			json.put(Event.JSON_KEY_SDATES, "15/05/2014");
+			json.put(Event.JSON_KEY_EDATES, "15/05/2014");
+			json.put(Event.JSON_KEY_SUBURB, "Perth");
+			json.put(Event.JSON_KEY_PRICE, "$15.00");
+			json.put(Event.JSON_KEY_EVENT, "Breakkie in Hipster Town");
+			
 			return new Event(json);
 		}catch (JSONException e){
 			//This should never happen

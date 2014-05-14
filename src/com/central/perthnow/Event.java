@@ -14,7 +14,8 @@ public class Event implements Parcelable{
 	public static final String JSON_KEY_ID = "id";
 	public static final String JSON_KEY_START_TIMES = "startTime";
 	public static final String JSON_KEY_END_TIMES = "endTime";
-	public static final String JSON_KEY_DATES = "date";
+	public static final String JSON_KEY_SDATES = "startDate";
+	public static final String JSON_KEY_EDATES = "endDate";
 	public static final String JSON_KEY_SUBURB = "suburb";
 	public static final String JSON_KEY_PRICE = "displayPrice";
 	public static final String JSON_KEY_EVENT = "event";
@@ -37,7 +38,11 @@ public class Event implements Parcelable{
 	/**
 	 * the date of the event
 	 */
-	private String mDate;
+	private String mSDate;
+	/**
+	 * the date of the event
+	 */
+	private String mEDate;
 	
 	/**
 	 * the name of the suburb
@@ -64,7 +69,8 @@ public class Event implements Parcelable{
 		mId = json.getLong(JSON_KEY_ID);
 		mStartTime = json.getString(JSON_KEY_START_TIMES);
 		mEndTime = json.getString(JSON_KEY_END_TIMES);
-		mDate = json.getString(JSON_KEY_DATES);
+		mSDate = json.getString(JSON_KEY_SDATES);
+		mEDate = json.getString(JSON_KEY_EDATES);
 		mSuburb = json.getString(JSON_KEY_SUBURB);
 		mPrice = json.getString(JSON_KEY_PRICE);
 		mEvent = json.getString(JSON_KEY_EVENT);
@@ -72,13 +78,14 @@ public class Event implements Parcelable{
 	}
 	
 		
-	public Event(long id, String mStartTime, String mEndTime, String mDate, String mSuburb,
+	public Event(long id, String mStartTime, String mEndTime, String mSDate, String mEDate, String mSuburb,
 			String mPrice, String mEvent) {
 		super();
 		this.mId = id;
 		this.mStartTime = mStartTime;
 		this.mEndTime = mEndTime;
-		this.mDate = mDate;
+		this.mSDate = mSDate;
+		this.mEDate = mEDate;
 		this.mSuburb = mSuburb;
 		this.mPrice = mPrice;
 		this.mEvent = mEvent;
@@ -115,8 +122,15 @@ public class Event implements Parcelable{
 	/**
 	 * Returns the date
 	 */
-	public String getDate(){
-		return mDate;
+	public String getSDate(){
+		return mSDate;
+	}
+	
+	/**
+	 * Returns the date
+	 */
+	public String getEDate(){
+		return mEDate;
 	}
 	
 	/**

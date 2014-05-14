@@ -14,22 +14,24 @@ import android.widget.Button;
 public class EventPageActivity extends Activity {
 
 	private Event event;
-	
+
 	protected void onCreate(Bundle savedInstanceState) {
 
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_event_page);
-		
+
 		event = (Event) getIntent().getParcelableExtra("obj");
-		
+
 		// when send to calendar button is clicked
 		Button Activity1 = (Button) findViewById(R.id.calendarIntent);
 		Activity1.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View view) {
 
-				Intent calIntent = new Intent(Intent.ACTION_INSERT);
-				SendEvent.sendEvents(calIntent, event);
+				// Intent calIntent = new Intent(Intent.ACTION_INSERT);
+				// SendEvent.sendEvents(calIntent, event);
+
+				Intent calIntent = SendEvent.foo(event);
 
 				// Verify it resolves
 				PackageManager packageManager = getPackageManager();
@@ -67,8 +69,6 @@ public class EventPageActivity extends Activity {
 
 		});
 
-		
-		
 		Log.d("test", Long.toString(event.getId()));
 	}
 
