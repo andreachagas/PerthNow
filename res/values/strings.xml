@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">PerthNow</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_section1">Events</string>
+    <string name="title_section2">Attractions</string>
+    <string name="title_section3">Starred</string>
+    <string name="time">Time</string>
+    <string name="date">Date</string>
+    <string name="title_activity_event_page">EventPageActivity</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="find_using_maps">find using maps</string>
+    <string name="send_data_to_calendar">Send Data to Calendar</string>
+
+</resources>
