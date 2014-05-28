@@ -26,14 +26,16 @@ public class SendEvent {
 
 		// calIntent.setData(CalendarContract.Events.CONTENT_URI);
 		calIntent.setType("vnd.android.cursor.item/event");
-		calIntent.putExtra(Events.TITLE, event.getEvent());
+		calIntent.putExtra(Events.TITLE, 
+				event.getEvent());
 		calIntent.putExtra(CalendarContract.EXTRA_EVENT_BEGIN_TIME,
 				event.getStartTime());
 		calIntent.putExtra(CalendarContract.EXTRA_EVENT_ALL_DAY,
 				event.getEndTime());
-		calIntent.putExtra(Events.EVENT_LOCATION, event.getSuburb());
+		calIntent.putExtra(Events.EVENT_LOCATION, 
+				event.getSuburb());
 		calIntent.putExtra(Events.DESCRIPTION,
-				"come over and see the wacky new world of old");
+				event.getDescription());
 
 		// gets event values
 		getYear(year);
@@ -133,9 +135,12 @@ public class SendEvent {
 		
 		Intent intent = new Intent(Intent.ACTION_INSERT);
 		intent.setType("vnd.android.cursor.item/event");
-		intent.putExtra(Events.TITLE, event.getEvent());
-		intent.putExtra(Events.DESCRIPTION, "Wheres the fucking description?");
-		intent.putExtra(Events.EVENT_LOCATION, event.getSuburb());
+		intent.putExtra(Events.TITLE, 
+				event.getEvent());
+		intent.putExtra(Events.DESCRIPTION, 
+				event.getDescription());
+		intent.putExtra(Events.EVENT_LOCATION, 
+				event.getSuburb());
 
 		GregorianCalendar startGreg = new GregorianCalendar(year, month, day, hour, minute);
 		intent.putExtra(CalendarContract.EXTRA_EVENT_BEGIN_TIME,

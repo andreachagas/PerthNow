@@ -1,37 +1,14 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/LinearLayout1"
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:orientation="vertical"
-    tools:context=".EventPageActivity" >
-
-    <Button
-        android:id="@+id/calendarIntent"
-        android:layout_width="280dp"
-        android:layout_height="60dp"
-        android:layout_gravity="center"
-        android:text="@string/send_data_to_calendar"
-        android:onClick="process"
-        android:textSize="18sp" />
+    android:layout_height="wrap_content" >
     
-    <Button
-        android:id="@+id/mapsIntent"
-        android:layout_width="280dp"
-        android:layout_height="60dp"
-        android:layout_gravity="center"
-        android:text="@string/find_using_maps"
-        android:textSize="18sp" />
-    
-
-    <ImageView 
+<ImageView 
         android:id="@+id/thumbnail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
         android:layout_marginRight="@dimen/default_spacing"
         android:contentDescription="@null"
         android:src="@drawable/ic_launcher"/>
@@ -40,40 +17,100 @@
         android:id="@+id/suburb"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
         android:layout_marginLeft="@dimen/default_spacing"
-        android:textAppearance="?android:attr/textAppearanceSmall"/>
+        android:layout_marginRight="@dimen/default_spacing"
+        android:textAppearance="?android:attr/textAppearanceMedium"/>
     
     <TextView
  		android:id="@+id/price"
  		android:layout_width="wrap_content"
  		android:layout_height="wrap_content"
- 		android:textAppearance="?android:attr/textAppearanceSmall" />
+ 		android:layout_alignParentRight="true"
+ 		android:layout_below="@id/suburb"
+ 		android:textAppearance="?android:attr/textAppearanceMedium" />
     
     <TextView 
         android:id="@+id/event"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceSmall"/>
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@+id/suburb"
+        android:layout_toRightOf="@+id/thumbnail"
+        android:textAppearance="?android:attr/textAppearanceMedium"/>
     
     <TextView 
+        android:id="@+id/start_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/event"
+        android:layout_toRightOf="@id/thumbnail"
+        android:minWidth="70dp"
+        android:gravity="right"
+        android:textAppearance="?android:attr/textAppearanceMedium"/>
+    
+    <TextView 
+        android:id="@+id/end_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+       	android:layout_below="@+id/event"
+        android:layout_marginLeft="@dimen/default_spacing"
+        android:layout_toRightOf="@+id/start_date"
+        android:minWidth="70dp"
+        android:gravity="right"
+        android:textAppearance="?android:attr/textAppearanceMedium"/>
+    
+    
+    <TextView 
+        android:id="@+id/start_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/default_spacing"
+        android:layout_below="@+id/start_date"
+        android:minWidth="70dp"
+        android:gravity="right"
+       android:textAppearance="?android:attr/textAppearanceMedium"/>
+    <TextView 
+        android:id="@+id/end_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/start_time"
+        android:layout_below="@+id/end_date"
+        android:minWidth="70dp"
+        android:gravity="right"
+        android:textAppearance="?android:attr/textAppearanceMedium"/>
+    
+     <TextView 
         android:id="@+id/description"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceSmall"/>
+        android:layout_marginLeft="@dimen/default_spacing"
+        android:layout_below="@+id/start_time"
+        android:textAppearance="?android:attr/textAppearanceMedium"/>
     
-    <TextView 
-        android:id="@+id/date"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceSmall"/>
-    
-    <TextView 
-        android:id="@+id/time"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceSmall"/>
-    
+    <Button
+        android:id="@+id/mapsIntent"
+        android:layout_width="160dp"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:gravity="center"
+        android:text="@string/find_using_maps"
+        android:textSize="14sp" 
+        android:textAlignment="center"/>
 
+    <Button
+        android:id="@+id/calendarIntent"
+        android:layout_width="160dp"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_toLeftOf="@+id/mapsIntent"
+        android:gravity="center"
+        android:onClick="process"
+        android:text="@string/send_data_to_calendar"
+        android:textSize="14sp" 
+        android:textAlignment="center"/>
 
-
-</LinearLayout>
+</RelativeLayout>

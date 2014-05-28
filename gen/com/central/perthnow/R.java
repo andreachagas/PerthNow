@@ -25,18 +25,21 @@ public final class R {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int LinearLayout1=0x7f080000;
-        public static final int action_settings=0x7f08000b;
-        public static final int calendarIntent=0x7f080001;
-        public static final int date=0x7f080008;
-        public static final int description=0x7f080007;
-        public static final int event=0x7f080006;
-        public static final int mapsIntent=0x7f080002;
-        public static final int pager=0x7f08000a;
-        public static final int price=0x7f080005;
-        public static final int suburb=0x7f080004;
-        public static final int thumbnail=0x7f080003;
-        public static final int time=0x7f080009;
+        public static final int action_settings=0x7f08000e;
+        public static final int calendarIntent=0x7f08000a;
+        public static final int date=0x7f08000c;
+        public static final int description=0x7f080008;
+        public static final int end_date=0x7f080005;
+        public static final int end_time=0x7f080007;
+        public static final int event=0x7f080003;
+        public static final int mapsIntent=0x7f080009;
+        public static final int pager=0x7f08000b;
+        public static final int price=0x7f080002;
+        public static final int start_date=0x7f080004;
+        public static final int start_time=0x7f080006;
+        public static final int suburb=0x7f080001;
+        public static final int thumbnail=0x7f080000;
+        public static final int time=0x7f08000d;
     }
     public static final class layout {
         public static final int activity_event_page=0x7f030000;
@@ -48,15 +51,20 @@ public final class R {
         public static final int main=0x7f070001;
     }
     public static final class string {
-        public static final int action_settings=0x7f050008;
+        public static final int action_settings=0x7f05000d;
         public static final int app_name=0x7f050000;
-        public static final int date=0x7f050006;
-        public static final int find_using_maps=0x7f05000a;
-        public static final int hello_world=0x7f050009;
+        public static final int date=0x7f05000a;
+        public static final int description=0x7f05000b;
+        public static final int end_date=0x7f050009;
+        public static final int end_time=0x7f050007;
+        public static final int find_using_maps=0x7f05000f;
+        public static final int hello_world=0x7f05000e;
         public static final int menu_settings=0x7f050001;
-        public static final int send_data_to_calendar=0x7f05000b;
+        public static final int send_data_to_calendar=0x7f050010;
+        public static final int start_date=0x7f050008;
+        public static final int start_time=0x7f050006;
         public static final int time=0x7f050005;
-        public static final int title_activity_event_page=0x7f050007;
+        public static final int title_activity_event_page=0x7f05000c;
         public static final int title_section1=0x7f050002;
         public static final int title_section2=0x7f050003;
         public static final int title_section3=0x7f050004;
